@@ -1,0 +1,6 @@
+Tasks
+1. Calculate Bill Discount Amount - Page 14
+2. Calculate Fahrenheit from Celsius - Page 14
+3. Convert the Fahrenheit calculation program to get Celsius input using keyboard. - Page 15
+4. Validate Short Name - Page 23
+5. Given a time in “hh:mm:ss” format extract the minutes - Page 24
