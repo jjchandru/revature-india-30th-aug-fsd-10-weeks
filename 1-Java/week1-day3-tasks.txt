@@ -1,0 +1,46 @@
+1 Sep 2021 Tasks
+1. Document listing problem - Page 27.
+2. Convert the profit calculation program to use method. The input parameters should be the buying price and selling price, the return type should be the profit - Page 31.
+3. Display Menu till exit.
+
+Menu
+====
+1. Balance Enquiry
+2. Recharge
+3. Change Caller Tune
+4. Exit
+
+Choose an option: 1
+
+Balance Enquiry
+
+Menu
+====
+1. Balance Enquiry
+2. Recharge
+3. Change Caller Tune
+4. Exit
+
+Choose an option: 2
+
+Recharge
+
+Menu
+====
+1. Balance Enquiry
+2. Recharge
+3. Change Caller Tune
+4. Exit
+
+Choose an option: 6
+
+Define a valid number.
+
+Menu
+====
+1. Balance Enquiry
+2. Recharge
+3. Change Caller Tune
+4. Exit
+
+Choose an option:
