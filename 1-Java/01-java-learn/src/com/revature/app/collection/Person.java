@@ -1,6 +1,6 @@
-package com.revature.app.objectclass;
+package com.revature.app.collection;
 
-public class Person {
+public class Person implements Comparable<Person> {
 	private String name;
 	private int age;
 	
@@ -50,6 +50,14 @@ public class Person {
 		} else if (!name.equals(other.name))
 			return false;
 		return true;
+	}
+
+	@Override
+	public int compareTo(Person person) {
+		//Person otherPerson = (Person) o;
+		System.out.println(this.name + " " + person.name + " " + name.compareTo(person.name));
+		return name.compareTo(person.name); // +ve - First object comes first; -ve - 2nd Object First; 0 - Equal
+		//return age - person.age;
 	}
 
 }
