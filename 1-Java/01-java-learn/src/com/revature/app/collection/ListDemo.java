@@ -26,7 +26,7 @@ public class ListDemo {
 		for (int i = 0; i < arrayList.size(); i++) {
 			System.out.println(arrayList.get(i));
 		}
-
+		
 		System.out.println("\nSorted");
 		Collections.sort(arrayList);
 		for (Integer number : arrayList) {

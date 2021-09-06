@@ -1,11 +1,9 @@
 package com.revature.app.collection;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
-public class ListObjectDemo {
+public class LinkedListDemo {
 
 	public static void main(String[] args) {
 		Person person1 = new Person("John", 15);
@@ -17,7 +15,7 @@ public class ListObjectDemo {
 		
 		// Maintains the insertion order
 		// Duplicate items
-		List<Person> personList = new ArrayList<>();
+		List<Person> personList = new LinkedList<>();
 		personList.add(person1);
 		personList.add(person2);
 		personList.add(person3);
@@ -25,15 +23,10 @@ public class ListObjectDemo {
 		personList.add(person5);
 		personList.add(person6);
 		
-		Collections.sort(personList);
+		personList.add(1, new Person("Janet", 25));
+		
 		for (Person person : personList) {
 			System.out.println(person);
-		}
-		
-		System.out.println("Display using Iterator:");
-		Iterator<Person> iterator = personList.iterator();
-		while (iterator.hasNext()) {
-			System.out.println(iterator.next());
 		}
 	}
 

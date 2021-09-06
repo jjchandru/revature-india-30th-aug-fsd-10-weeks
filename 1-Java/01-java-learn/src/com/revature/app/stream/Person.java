@@ -1,4 +1,4 @@
-package com.revature.app.collection;
+package com.revature.app.stream;
 
 public class Person implements Comparable<Person> {
 	private long id;
