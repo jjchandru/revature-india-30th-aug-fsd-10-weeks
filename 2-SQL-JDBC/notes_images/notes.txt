@@ -27,9 +27,9 @@ Read Phenomena
 ==============
 Isolation levels define the degree to which a transaction must be isolated from data modification.
 
-Dirty Read - Does not get the data modified by another transaction.
+Dirty Read - Select query does not read the data modified by another transaction.
 
-Non Repeatable Read - When a transaction reads a row twice, and get a different value each time.
+Non Repeatable Read - When a transaction reads a row twice, and each time it gets a different value.
 
 Phantom Read - Phantom Read occurs when two same queries retrieves two different set of results.
 

@@ -1,0 +1,95 @@
+Exercise
+========
+1. Insert the following menu details into the above table by manually typing the insert script.
+
+Menu		Price
+====            =====
+Tea		7.00
+Coffee		10.00
+Sandwich	20.00
+
+Table creation script:
+
+CREATE TABLE menu (
+  id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  name VARCHAR(45) NULL,
+  price DECIMAL(6,2) NULL);
+
+2. Write select query to get items with price greater than Rs. 8.
+
+3. Modify the price of 'Sandwich' to Rs. 25.00
+
+4. Delete 'Sandwich' from the menu.
+
+5. Based on the table and data provided for book and subscriber, get the below result which will get the books subscribed by each subscriber.
+
+ name     title                                
+-------- --------------------------------------
+ Jacob    The Da Vinci Code                    
+ Jacob    Angels and Demons
+ John     The Da Vinci Code
+ John     Angels and Demons
+ Smith    The Da Vinci Code
+ Smith    Harry Potter and the Deathly Hallows
+ Smith    Angels and Demons
+ Stella   Harry Potter and the Deathly Hallows
+ Stella   Angels and Demons
+
+CREATE TABLE subscriber (
+  id int NOT NULL AUTO_INCREMENT,
+  name varchar(45) DEFAULT NULL,
+  PRIMARY KEY (id)
+);
+
+INSERT INTO subscriber (name) VALUES ('John');
+INSERT INTO subscriber (name) VALUES ('Stella');
+INSERT INTO subscriber (name) VALUES ('Smith');
+INSERT INTO subscriber (name) VALUES ('Jacob');
+
+CREATE TABLE book (
+  id int NOT NULL AUTO_INCREMENT,
+  title varchar(100) DEFAULT NULL,
+  PRIMARY KEY (id)
+);
+
+INSERT INTO book (name) VALUES ('The Da Vinci Code');
+INSERT INTO book (name) VALUES ('Harry Potter and the Deathly Hallows');
+INSERT INTO book (name) VALUES ('Angels and Demons');
+INSERT INTO book (name) VALUES ('Harry Potter and the Goblet of Fire');
+
+CREATE TABLE book_subscriber (
+  id int NOT NULL AUTO_INCREMENT,
+  book_id int,
+  subscriber_id int,
+  PRIMARY KEY (id)
+);
+
+insert into book_subscriber (book_id, subscriber_id) values (1, 1);
+insert into book_subscriber (book_id, subscriber_id) values (1, 4);
+insert into book_subscriber (book_id, subscriber_id) values (1, 3);
+insert into book_subscriber (book_id, subscriber_id) values (2, 2);
+insert into book_subscriber (book_id, subscriber_id) values (2, 3);
+insert into book_subscriber (book_id, subscriber_id) values (3, 1);
+insert into book_subscriber (book_id, subscriber_id) values (3, 2);
+insert into book_subscriber (book_id, subscriber_id) values (3, 4);
+insert into book_subscriber (book_id, subscriber_id) values (3, 3);
+
+6. Modify the earlier query to also include the books that are not yet subscribed. Refer output below.
+
+ name     title                                
+-------- --------------------------------------
+ NULL     Harry Potter and the Goblet of Fire
+ Jacob    The Da Vinci Code                    
+ Jacob    Angels and Demons
+ John     The Da Vinci Code
+ John     Angels and Demons
+ Smith    The Da Vinci Code
+ Smith    Harry Potter and the Deathly Hallows
+ Smith    Angels and Demons
+ Stella   Harry Potter and the Deathly Hallows
+ Stella   Angels and Demons
+
+7. For an online food aggregation platform define table structure for the following requirement:
+   1. Store details about multiple restaurants and it's menu items.
+   2. Create a table to store the signed up user details.
+   3. Define a table to store the order details of a customer.
