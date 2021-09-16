@@ -1,0 +1,30 @@
+Outer Join
+==========
+create table student(
+st_id int primary key auto_increment,
+st_name varchar(30)
+);
+insert into student (st_name) values ('John');
+insert into student (st_name) values ('Jack');
+insert into student (st_name) values ('James');
+insert into student (st_name) values ('Stella');
+create table attendance(
+at_id int primary key auto_increment,
+at_st_id int,
+at_date date,
+constraint at_st_fk foreign key (at_st_id) references student(st_id)
+);
+insert into attendance (at_st_id, at_date) values (1, '2020-01-15');
+insert into attendance (at_st_id, at_date) values (2, '2020-01-15');
+insert into attendance (at_st_id, at_date) values (4, '2020-01-15');
+
+select st_name, ifnull(at_date, "ABSENT") 'date'
+from student left outer join attendance
+on at_st_id = st_id
+
+Self Join
+=========
+select e1.id, e1.name, e1.salary, e1.gender, e2.name manager
+from employee e1 
+inner join employee e2
+on e1.manager_id = e2.id

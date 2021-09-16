@@ -93,6 +93,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	@Override
 	public void update(Employee employee) throws SQLException {
 		try (Connection connection = Util.getConnection()) {
+			connection.setAutoCommit(false);
 			String sql = "update employee set name = ?, salary = ?, gender = ?, department_id = ? where id = ?";
 			PreparedStatement statement = connection.prepareStatement(sql);
 			statement.setString(1, employee.getName());
@@ -101,6 +102,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 			statement.setInt(4, employee.getDepartment().getId());
 			statement.setInt(5, employee.getId());
 			statement.executeUpdate();
+			connection.commit();
 		}
 	}
 
