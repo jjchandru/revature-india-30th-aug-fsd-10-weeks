@@ -6,13 +6,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class HelloServlet extends HttpServlet {
+public class ConfigurationDemoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		System.out.println("Hello World!!!");
-		response.setHeader("Content-Type", "text/html");
+		String name = getServletConfig().getInitParameter("default-value");
+		response.getWriter().write("Default name is: " + name);
 	}
 
 }
