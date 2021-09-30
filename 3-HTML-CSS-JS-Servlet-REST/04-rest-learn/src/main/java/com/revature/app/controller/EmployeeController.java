@@ -1,6 +1,6 @@
 package com.revature.app.controller;
 
-import java.util.ArrayList;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -14,40 +14,28 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.revature.app.dao.EmployeeDao;
+import com.revature.app.dao.impl.EmployeeDaoImpl;
 import com.revature.app.model.Department;
 import com.revature.app.model.Employee;
 
 @Path("/employees")
 public class EmployeeController {
+	private EmployeeDao dao = new EmployeeDaoImpl();
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response list() {
-		List<Employee> employeeList = new ArrayList<>();
-		Employee employee1 = new Employee();
-		employee1.setId(1);
-		employee1.setName("John");
-		employee1.setGender('M');
-		employee1.setSalary(5000);
-		Department department = new Department();
-		department.setId(1);
-		department.setName("Manufacturing");
-		employee1.setDepartment(department);
-
-		Employee employee2 = new Employee();
-		employee2.setId(2);
-		employee2.setName("Stella");
-		employee2.setGender('F');
-		employee2.setSalary(5000);
-		employee2.setDepartment(department);
-		
-		employeeList.add(employee1);
-		employeeList.add(employee2);
-		
-		return Response
-			.ok()
-			.entity(employeeList)
-			.build();
+		List<Employee> employeeList;
+		try {
+			employeeList = dao.list();
+			return Response
+					.ok()
+					.entity(employeeList)
+					.build();
+		} catch (SQLException e) {
+			return Response.status(500).build();
+		}
 	}
 	
 	@GET
@@ -71,8 +59,12 @@ public class EmployeeController {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response create(Employee employee) {
-		System.out.println(employee);
-		return Response.ok().build();
+		try {
+			dao.create(employee);
+			return Response.ok().build();
+		} catch (SQLException e) {
+			return Response.status(500).build();
+		}
 	}
 
 	@PUT

@@ -6,11 +6,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.revature.bankapp.dao.CustomerDao;
 import com.revature.bankapp.dao.Util;
 import com.revature.bankapp.model.Customer;
 
 public class CustomerDaoImpl implements CustomerDao {
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(CustomerDaoImpl.class);
 
 	@Override
 	public int create(Customer customer) throws SQLException {
