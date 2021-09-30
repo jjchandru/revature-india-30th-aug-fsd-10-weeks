@@ -45,7 +45,7 @@ async function addCustomer() {
         error.style.display = "block";
     }
 }
-/*
+
 firstName.addEventListener("keyup", function () {
     //console.log(firstName.value);
     if (firstName.value != "" && firstName.value.length > 20) {
@@ -67,4 +67,3 @@ firstName.addEventListener("keyup", function () {
         valid = false;
     }
 });
-*/
