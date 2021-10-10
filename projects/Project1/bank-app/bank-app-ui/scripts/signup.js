@@ -34,6 +34,7 @@ async function addCustomer() {
     var options = {
         method: 'POST',
         headers: { "Content-Type": "application/json"},
+        credentials: 'include',
         body: JSON.stringify(customer)
     };
 

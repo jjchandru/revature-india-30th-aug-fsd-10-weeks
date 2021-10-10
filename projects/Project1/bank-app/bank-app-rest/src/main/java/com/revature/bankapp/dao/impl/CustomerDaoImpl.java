@@ -45,4 +45,32 @@ public class CustomerDaoImpl implements CustomerDao {
 		}
 	}
 
+	@Override
+	public Customer getCustomerByEmail(String email) throws AppException {
+		LOGGER.info("Start");
+		LOGGER.debug("{}", email);
+		Customer customer = null;
+		try (Connection connection = Util.getConnection()) {
+			String sql = "select * from customer where email = ?";
+			PreparedStatement statement = connection.prepareStatement(sql);
+			statement.setString(1, email);
+			ResultSet rs = statement.executeQuery();
+			LOGGER.debug("Query executed successfully.");
+			if (rs.next()) {
+				customer = new Customer();
+				customer.setId(rs.getInt("id"));
+				customer.setFirstName(rs.getString("first_name"));
+				customer.setLastName(rs.getString("last_name"));
+				customer.setEmail(rs.getString("email"));
+				customer.setPassword(rs.getString("password"));
+			}
+			
+			LOGGER.info("End");
+		} catch (SQLException e) {
+			LOGGER.error("Error inserting customer", e);
+			throw new AppException(e);
+		}
+		return customer;
+	}
+
 }
