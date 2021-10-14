@@ -19,6 +19,15 @@
     <span *ngIf="!movie.bookingsOpen" class="booking-closed">
         Bookings Closed
     </span>
+    
+    <span [ngClass]="movie.bookingsOpen ? 'booking-open' : 'booking-closed'">
+        Bookings
+    </span>
+    
+    <span [ngStyle]="{ 'color' : movie.bookingsOpen ? 'green' : 'red'}">
+        Bookings
+    </span>
+
     <span class="favorite" *ngIf="!movie.favorite" (click)="toggleFavorite()">
         <i class="material-icons">favorite_border</i>
     </span>

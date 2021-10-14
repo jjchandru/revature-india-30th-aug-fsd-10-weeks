@@ -9,6 +9,8 @@ import { MovieListComponent } from './movie-list/movie-list.component';
 import { FormsModule } from '@angular/forms';
 import { EditMovieComponent } from './edit-movie/edit-movie.component';
 import { ProfileComponent } from './profile/profile.component';
+import { HttpComponent } from './http/http.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ProfileComponent } from './profile/profile.component';
     MovieComponent,
     MovieListComponent,
     EditMovieComponent,
-    ProfileComponent
+    ProfileComponent,
+    HttpComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
