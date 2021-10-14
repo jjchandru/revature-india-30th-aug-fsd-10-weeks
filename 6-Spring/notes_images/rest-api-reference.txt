@@ -1,0 +1,5 @@
+Get with primary key - Page 59
+Post example - Page 64
+Put example - Page 71
+Delete example - Page 73
+REST API Naming Guidelines - Page 74

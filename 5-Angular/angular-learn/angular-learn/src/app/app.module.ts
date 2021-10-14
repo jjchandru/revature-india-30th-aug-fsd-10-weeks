@@ -11,6 +11,8 @@ import { EditMovieComponent } from './edit-movie/edit-movie.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HttpComponent } from './http/http.component';
 import { LoginComponent } from './login/login.component';
+import { CustomPipeComponent } from './custom-pipe/custom-pipe.component';
+import { ArrayTransformPipe } from './custom-pipe/array-transform.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { LoginComponent } from './login/login.component';
     EditMovieComponent,
     ProfileComponent,
     HttpComponent,
-    LoginComponent
+    LoginComponent,
+    CustomPipeComponent,
+    ArrayTransformPipe
   ],
   imports: [
     BrowserModule,
