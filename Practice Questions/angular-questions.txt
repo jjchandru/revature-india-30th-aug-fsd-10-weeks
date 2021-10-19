@@ -1,0 +1,44 @@
+What is a single page application?
+Is it possible to implement a Single Page Application using JavaScript?
+What is Angular?
+What is Angular CLI?
+(Folder structure) What is node_modules?
+(Folder structure) What is src?
+Where is the app folder located? What files does it contain (if created by Angular CLI)
+What is the difference between Angular and AngularJS?
+What is NodeJS?
+What is Node Package Manager?
+What is the importance of package.json?
+What is TypeScript?
+List four primitive data types in TypeScript?
+What is a Tuple in TypeScript?
+List the three access modifiers in TypeScript?
+What are decorators?
+What is an interface in TypeScript?
+List the high level steps to install angular.
+What is the importance of main.js?
+What is a module in angular?
+What is a component in angular?
+What is the command to create a new angular project?
+What is a module?
+What is the command to create a new component?
+What is the importance of @Component decorator?
+List the three structural directives available in JavaScript?
+What is the syntax to define ngIf directive?
+What is the syntax to define ngFor directive?
+What is a Pipe?
+List 3 built-in pipes available in angular.
+What is the syntax to use a pipe?
+What is the interface that needs to be implemented for creating a custom pipe?
+Give an example for one way data binding.
+Give an example for two way data binding.
+What is a service in angular?
+When do we use a service in angular?
+How to implement dependency injection in TypeScript?
+What is the built-in class available in angular to make rest api calls?
+What is @NgModule? What are some of the attributes inside of the @NgModule decorator?
+What is @Component? What are the attributes inside of the @Component decorator?
+What is the benefit of routing?
+What is route guard?
+What is the data type returned by the functions in HttpClient?
+Why do we need a observable when making a rest api call usin HttpClient?
