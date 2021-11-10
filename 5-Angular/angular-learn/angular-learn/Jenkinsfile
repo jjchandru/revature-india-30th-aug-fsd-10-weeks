@@ -24,14 +24,15 @@ pipeline {
         stage('build-and-deploy') {
             steps {
 				//sh 'docker container rm -f revature-cps'
-                sh 'docker build -t revature-cps ./5-Angular/angular-learn/angular-learn'
-				sh 'docker run -d -p 5000:5000 revature-cps'
+                //sh 'docker build -t revature-cps ./5-Angular/angular-learn/angular-learn'
+				//sh 'docker run -d -p 5000:5000 revature-cps'
 				//sh 'docker image rm -f c2993b9f3ea8'
 				//sh 'docker image rm -f e2c28c30cdd4'
 				//sh 'docker image rm -f 1da251041fb7'
 				//sh 'docker image rm -f b2c701def95f'
 				//sh 'docker image rm -f 6fec7cb5b096'
-				//sh 'docker image ls'
+				sh 'docker image rm -f b5b366dc7fa3 42c52c88112c b533e7339090 992a537fd8b1 88d314279117 79c3d0e0e6ab 7220633f01cd'
+				sh 'docker image ls'
 				sh 'df -h'
             }
         }
