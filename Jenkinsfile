@@ -1,4 +1,4 @@
-pipeline {
+/*pipeline {
 	agent any
 	stages {
 		stage('build') {
@@ -17,4 +17,14 @@ pipeline {
 			}
 		}
 	}
+}*/
+pipeline {
+    agent any
+    stages {
+        stage('example') {
+            steps {
+                sh 'docker version'
+            }
+        }
+    }
 }
