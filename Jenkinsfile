@@ -21,9 +21,11 @@
 pipeline {
     agent any
     stages {
-        stage('example') {
+        stage('build-and-deploy') {
             steps {
-                sh 'docker-compose --version'
+				//sh 'docker container rm -f revature-cps'
+                sh 'docker build -t revature-cps ./5-Angular/angular-learn/angular-learn'
+				sh 'docker run -d -p 5000:5000 revature-cps'
             }
         }
     }
