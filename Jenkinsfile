@@ -23,7 +23,7 @@ pipeline {
     stages {
         stage('example') {
             steps {
-                sh 'docker version'
+                sh 'docker-compose --version'
             }
         }
     }
