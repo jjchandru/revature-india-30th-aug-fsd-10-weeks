@@ -32,7 +32,7 @@ pipeline {
 				//sh 'docker image rm -f b2c701def95f'
 				//sh 'docker image rm -f 6fec7cb5b096'
 				//sh 'docker image ls'
-				sh 'du -h /'
+				sh 'df -h'
             }
         }
     }
