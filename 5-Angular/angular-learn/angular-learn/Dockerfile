@@ -1,5 +1,5 @@
 FROM node:latest as build
-WORKDIR /var/lib/jenkins/workspace/sample-app/5-Angular/angular-learn/angular-learn
+WORKDIR /var/lib/jenkins/workspace/sample-app/5-Angular/angular-learn/angular-learn/
 RUN npm install
 RUN npm run build -- --base-href='/angular-learn/'
 
