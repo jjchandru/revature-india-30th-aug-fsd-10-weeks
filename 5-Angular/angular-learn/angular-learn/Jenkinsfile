@@ -31,8 +31,8 @@ pipeline {
 				//sh 'docker image rm -f 1da251041fb7'
 				//sh 'docker image rm -f b2c701def95f'
 				//sh 'docker image rm -f 6fec7cb5b096'
-				sh 'docker image rm -f b5b366dc7fa3 42c52c88112c b533e7339090 992a537fd8b1 88d314279117 79c3d0e0e6ab 7220633f01cd'
-				sh 'docker image ls'
+				//sh 'docker image rm -f b5b366dc7fa3 42c52c88112c b533e7339090 992a537fd8b1 88d314279117 79c3d0e0e6ab 7220633f01cd'
+				sh 'docker image ls -a'
 				sh 'df -h'
             }
         }
