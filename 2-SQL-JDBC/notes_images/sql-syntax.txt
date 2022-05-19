@@ -20,7 +20,13 @@ update [table-name] set [col1] = [new-value], [col2] = [new-value], ... where [c
 
 delete from [table-name] where [condition];
 
+truncate table [table-name];
+
 alter table [table-name] add [column-name] [type];
+
+alter table [table-name] rename to [new-table-name];
+
+alter table [table-name] drop column [column-name];
 
 create table [table-name] (
     id int,
@@ -37,9 +43,31 @@ create table [table-name] (
 
 alter table [table-name] add [column-name] [type] primary key auto_increment;
 
+drop table [table-name];
+
 select * from [table-name];
 
 select [col1], [col2], [col3], ... from [table-name];
+
+select * from [table-name] where [column] = [value];
+# comparison operators - =, >, >=, <, <=, <>, !=, between ... and ..., in(), is, is not, is not null, is null, like
+
+select * from [table-name] where [column] like [value];
+# % - represents zero or more characters; _ (underscore) - represents single character
+
+select * from [table-name] where [col1] > [value] and [col2] < [value];
+
+select * from [table-name] order by [column-name];
+
+select * from [table-name] order by [column-name] desc;
+
+select * from [table-name] order by [col1], [col2], ...;
+
+select [aggregate-function]([col1]) from [table-name];
+
+select * from [table-name] where [col-1] = (select [aggregate-function]([col1]) from [table-name]);
+
+select distinct [column-name] from [table-name];
 
 select   [aggregate-column], [aggregate-function-on-another-column] 
 from     [table-name] 
@@ -56,8 +84,6 @@ case
     when [column-name] = value then [new-value]
 end [alias-name]
 from [table-name];
-
-alter table [table-name] drop column [column-name];
 
 // Implicit Join Notation
 select * from [table1], [table2], [table3] .... where [join-conditions];
@@ -106,6 +132,8 @@ begin
    [statements]
 end
 
+drop procedure [procedure-name]
+
 Stored Function
 ===============
 create function [function-name]([parameter-name] [data-type], ...) returns [data-type]
@@ -114,3 +142,5 @@ create function [function-name]([parameter-name] [data-type], ...) returns [data
 begin
     [statements];
 end
+
+drop function if exists [function=name]

@@ -2,7 +2,7 @@
 <html>
     <body>
         <script>
-            async function getRepos() {
+            /*async function getRepos() {
                 // fetch returns a Promise object
                 // Promise object introduced as part of ES6
                 let response = await fetch("https://api.github.com/users/jjchandru/repos");
@@ -11,7 +11,13 @@
                     console.log(repo.name);
                 }
             };
-            getRepos();
+            getRepos();*/
+            fetch("https://api.github.com/users/jjchandru/repo")
+                .then(response => response.json())
+                .then(
+                    data => console.log(data),
+                    error => console.log(error.message)
+                );
             console.log("After calling getRepos()");
         </script>
     </body>

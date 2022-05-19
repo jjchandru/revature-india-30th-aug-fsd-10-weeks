@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbling & Capturing</title>
+    <style>
+        div {
+            border: 2px solid blue;
+            margin: 1rem
+        }
+    </style>
+</head>
+<body>
+    <div onclick="console.log('DIV 1');">
+        DIV 1
+        <div onclick="console.log('DIV 2');">
+            DIV 2
+            <div id="div3" onclick="console.log('DIV 3');">
+                DIV 3
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("div3").addEventListener("click", 
+        function () {
+            console.log("Capture of DIV3.");
+        },
+        true)
+    </script>
+</body>
+</html>
